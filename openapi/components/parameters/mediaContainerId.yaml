@@ -1,0 +1,7 @@
+name: idMediaContainer
+in: header
+description: >-
+  The newly created media object container's id.
+schema:
+  type: int
+required: false

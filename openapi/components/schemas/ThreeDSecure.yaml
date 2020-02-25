@@ -1,0 +1,14 @@
+type: object
+properties:
+  caption:
+    type: string
+    description: A caption for the photo.
+  imageUrl:
+    type: URL
+    description: The path to the photo.
+  locationId:
+    type: string
+    description: The ID of a Page associated with a location that you want to tag the photo with.
+  userTags:
+    description: An array of public usernames and x/y coordinates for any public Instagram users who you want to tag in the photo.
+    type: string

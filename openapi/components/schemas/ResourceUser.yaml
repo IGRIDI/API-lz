@@ -1,0 +1,38 @@
+type: object
+properties:
+  id:
+    type: string
+    description: The user identifier.
+    readOnly: true
+  username:
+    type: string
+    description: The user’s username.
+  passwordPattern:
+    description: Allowed password pattern
+    type: string
+  profilePicture:
+    type: URL
+    writeOnly: true
+    description: The URL of the user’s profile picture.
+  fullName:
+    type: string
+    writeOnly: true
+    description: The user’s full name.
+  bio:
+    type: string
+    writeOnly: true
+    description: The text of the user’s biography.
+  website:
+    type: string
+    writeOnly: true
+    description: The user’s website.
+  isBusiness:
+    type: boolean
+    writeOnly: true
+    description: A Boolean value that indicates whether the user has a business profile.
+
+# using in 201
+  createdTime:
+    description: The user created time
+    allOf:
+      - $ref: ./ServerTimestamp.yaml

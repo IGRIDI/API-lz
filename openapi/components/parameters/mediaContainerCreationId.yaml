@@ -1,0 +1,7 @@
+name: idMediaContainerCreation
+in: header
+description: >-
+  Created media object container's id.
+schema:
+  $ref: ../schemas/ResourceId.yaml
+required: false

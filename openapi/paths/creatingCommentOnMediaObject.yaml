@@ -1,0 +1,23 @@
+parameters:
+  - $ref: ../components/parameters/commentId.yaml
+post:
+  tags:
+    - Creating #Coupons
+  summary: Creating Comment on Media Object
+  operationId: CreatingComment
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/requesBodyCreateComment.yaml
+    description: Creating Comment on Media Object resource
+    required: true
+  responses:
+    '200':
+      description: Creating Comment were retrieved successfully
+      content:
+        application/json:
+          schema:
+              $ref: ../components/schemas/AnswerComment.yaml
+    '401':
+      $ref: ../components/responses/AccessForbidden.yaml

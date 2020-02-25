@@ -1,0 +1,47 @@
+parameters:
+  - $ref: ../components/parameters/mediaContainerId.yaml
+post:
+  tags:
+    - Creating Video Containers #Payments
+  summary: Creates a media container for video.
+  operationId: PostPayment
+  description: |
+    Creates a media container for a video Instagram Media object.
+
+    Videos must meet the following specifications:
+
+    Container: MOV or MP4 (MPEG-4 Part 14), no edit lists, moov atom at the front of the file.
+
+     Audio codec: AAC, 48khz sample rate maximum, 1 or 2 channels (mono or stereo).
+
+      Video codec: HEVC or H264, progressive scan, closed GOP, 4:2:0 chroma subsampling.
+
+      Frame rate: 23-60 FPS.
+
+      Maximum columns (horizontal pixels): 1920
+
+      Minimum aspect ratio [cols / rows]: 4 / 5
+
+      Maximum aspect ratio [cols / rows]: 16 / 9
+
+      Bitrate: VBR, 5Mbps maximum
+
+      Duration: 60 seconds maximum, 3 seconds minimum
+
+      File size: 100MB maximum
+
+      If successful, this edge will respond with the newly created media object container's id.
+      You can then use the id to publish the media object container.
+  requestBody:
+    $ref: ../components/requestBodies/MediaContainerForVideo.yaml
+  responses:
+    '201':
+      description: Media container entry was created
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AnswerMedia.yaml
+    '401':
+      $ref: ../components/responses/AccessForbidden.yaml
+    '422':
+      $ref: ../components/responses/InvalidDataError.yaml

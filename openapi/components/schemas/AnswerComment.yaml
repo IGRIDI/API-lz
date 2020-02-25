@@ -1,0 +1,5 @@
+type: object
+properties:
+  idComment:
+    description: The newly created comment's id.
+    type: int

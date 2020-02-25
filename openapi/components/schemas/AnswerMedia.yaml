@@ -1,0 +1,5 @@
+type: object
+properties:
+  idMediaContainer:
+    description: The newly created media object container's id.
+    type: int

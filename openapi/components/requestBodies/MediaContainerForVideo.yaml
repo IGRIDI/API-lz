@@ -1,0 +1,6 @@
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/CaptionForVideo.yaml
+description: Media container for video resource
+required: true

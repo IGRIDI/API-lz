@@ -1,0 +1,7 @@
+name: usersId
+in: header
+description: >-
+  User's identifier
+schema:
+  $ref: ../schemas/ResourceId.yaml
+required: false

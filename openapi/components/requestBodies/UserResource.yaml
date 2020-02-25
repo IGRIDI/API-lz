@@ -1,0 +1,6 @@
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/ResourceUser.yaml
+description: User resource
+required: true

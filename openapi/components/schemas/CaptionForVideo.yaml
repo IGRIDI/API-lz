@@ -1,0 +1,15 @@
+type: object
+properties:
+  caption:
+    type: string
+    description: A caption for the video.
+  videoUrl:
+    type: URL
+    description: The path to the video.
+  locationId:
+    type: string
+    description: The ID of a Page associated with a location that you want to tag the video with.
+  thumbOffset:
+    description: Location, in milliseconds, of the video frame to be used as the video's cover thumbnail image. Default value is 0, which is the first frame of the video.
+    type: double
+

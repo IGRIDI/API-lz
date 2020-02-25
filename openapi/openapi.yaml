@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  version: '1.0'
+  title: REST API
+  contact:
+    name: API Support
+    email: lin8ro@gmail.com
+  description:
+    $ref: description.md
+servers:
+  - url: 'https://lalala.com/'
+tags:
+  - name: Users
+    description: |
+     Your users.
+  - name: User Authentication
+    description: >
+      Create authentication login users.
+  - name: Logout
+    description: |
+      User's logout.
+  - name: Reading
+    description: >
+      Getting Comments on a Media Object.
+  - name: Media
+    description: >
+      Creates a media container for photo, video and publishing it.
+  - name: Publishing Media Object
+    description: |
+      Publishing Media Object
+  - name: Users
+    description: >
+      A User represents a person who can login to Instagram, and take actions
+      subject to their granted permissions.
+x-tagGroups:
+  - name: Users
+    tags:
+      - Users
+      - User Authentication
+      - Logout
+      - Contacts
+  - name: Media
+    tags:
+      - Creating Photo Containers
+      - Creating Video Containers
+      - Publishing Media Object
+  - name: Comments
+    tags:
+      - Creating
+      - Reading
+paths:
+  /creatingPhotoContainers:
+    $ref: ./paths/creatingPhotoContainers.yaml
+  /authentication-options:
+    $ref: ./paths/authentication-options.yaml
+  /creatingCommentOnMediaObject:
+    $ref: ./paths/creatingCommentOnMediaObject.yaml
+  /user:
+    $ref: ./paths/users.yaml
+  /invoices:
+    $ref: ./paths/invoices.yaml
+  /creatingVideoContainers:
+    $ref: ./paths/creatingVideoContainers.yaml
+  /publishingMediaObject:
+    $ref: ./paths/publishingMediaObject.yaml

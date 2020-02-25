@@ -1,0 +1,8 @@
+type: object
+properties:
+  idMediaContainer:
+    description: The newly created media object container's id.
+    type: int
+  textComment:
+    type: string
+    description: The text to be included in the comment.

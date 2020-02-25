@@ -1,0 +1,21 @@
+parameters:
+  - $ref: ../components/parameters/mediaContainerCreationId.yaml
+post:
+  tags:
+    - Publishing Media Object  #Transactions
+  summary: Publishing Media Object
+  operationId: PublishingMediaObject
+  description: |
+    This edge allows you to publish an Instagram Media object
+    on an Instagram User by publishing its container.
+  requestBody:
+    $ref: ../components/requestBodies/CreatedMediaContainerRequest.yaml #TransactionRequest  ПЕРЕИМЕНОВАНИЕ
+  responses:
+    '201':
+      description: Media Object published
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/MediaContainerCreation.yaml #ПЕРЕИМЕНОВАНИЕ  Transaction
+    '401':
+      $ref: ../components/responses/AccessForbidden.yaml

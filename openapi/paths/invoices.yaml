@@ -1,0 +1,19 @@
+parameters:
+  - $ref: ../components/parameters/mediaContainerCreationId.yaml
+get:
+  tags:
+    - Reading #Invoices
+  summary: Getting Comments of Media Object.
+  operationId: GetComments
+  responses:
+    '200':
+      description: A list of comments was retrieved successfully
+      headers:
+        idMediaContainerCreation:
+          $ref: ../components/parameters/mediaContainerCreationId.yaml
+      content:
+        application/json:
+          schema:
+              $ref: ../components/schemas/Invoices/Invoice.yaml
+    '401':
+      $ref: ../components/responses/AccessForbidden.yaml

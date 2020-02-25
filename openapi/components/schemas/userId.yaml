@@ -1,0 +1,8 @@
+description: User's identifier
+type: object
+required:
+  - type
+properties:
+  userId:
+    description: The result of create user
+    type: string

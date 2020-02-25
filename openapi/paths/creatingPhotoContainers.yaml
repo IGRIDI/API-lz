@@ -1,0 +1,50 @@
+parameters:
+  - $ref: ../components/parameters/mediaContainerId.yaml
+post:
+  tags:
+    - Creating Photo Containers #3D Secure
+  summary: Creates a media container for photo.
+  operationId: PostMediaPhotoContainer
+  description: |
+    Creates a media container for photo Instagram Media object.
+
+    Photos must meet the following specifications:
+
+    Maximum file size: 8MB
+
+    Aspect ratio: Must be within a 4:5 to 1.91:1 range
+
+    Minimum resolution: 150x150 (lower resolutions will be scaled up to the minimum)
+
+    Maximum resolution: 1920x1080 (higher resolutions will be scaled down to the maximum)
+
+    Formats: JPEG
+
+    If successful, this edge will respond with the newly created media object container's id.
+    You can then use the id to publish the media object container.
+    If you don't publish the media object container within 24 hours, it will expire.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ThreeDSecure.yaml
+    description: Media container  resource
+    required: true
+  responses:
+    '201':
+      description: Media container entry was created
+      headers:
+        Rate-Limit-Limit:
+          $ref: ../components/headers/Rate-Limit-Limit.yaml
+        Rate-Limit-Remaining:
+          $ref: ../components/headers/Rate-Limit-Remaining.yaml
+        Rate-Limit-Reset:
+          $ref: ../components/headers/Rate-Limit-Reset.yaml
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/AnswerMedia.yaml
+    '401':
+      $ref: ../components/responses/AccessForbidden.yaml
+    '422':
+      $ref: ../components/responses/InvalidDataError.yaml

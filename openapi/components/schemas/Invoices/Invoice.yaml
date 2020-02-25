@@ -1,0 +1,11 @@
+type: object
+properties:
+  commentId:
+    description: Id for the comment
+    type: integer
+  timestamp:
+    description: Times tamp
+    type: string
+  text:
+    description: Text of the comment
+    type: string

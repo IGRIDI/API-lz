@@ -1,0 +1,5 @@
+type: object
+properties:
+  usersId:
+    description: User's identifier
+    type: string

@@ -1,0 +1,7 @@
+name: idComment
+in: header
+description: >-
+  Comment's identifier
+schema:
+  type: int
+required: false
